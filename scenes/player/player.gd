@@ -4,6 +4,7 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
+
 @onready var camera3d_1: Camera3D = %Camera3D
 @onready var head_1: Node3D = %Head
 #@onready var head_2: MeshInstance3D = %headNose
