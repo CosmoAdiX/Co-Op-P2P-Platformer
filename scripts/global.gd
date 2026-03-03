@@ -10,5 +10,3 @@ func shoot_ball(pos, _dir, _force):
 	var new_ball = ball_1.instantiate()
 	new_ball.position = pos
 	spawn_container.add_child(new_ball, true)
-	
-	pass
