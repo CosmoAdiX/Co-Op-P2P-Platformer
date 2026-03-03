@@ -18,6 +18,9 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath(".:position")
 properties/1/spawn = true
 properties/1/replication_mode = 1
+properties/2/path = NodePath(".:collision_layer")
+properties/2/spawn = true
+properties/2/replication_mode = 1
 
 [node name="Ball" type="RigidBody3D" unique_id=942079593]
 collision_layer = 0
@@ -32,3 +35,9 @@ mesh = SubResource("SphereMesh_jnxa0")
 replication_config = SubResource("SceneReplicationConfig_jnxa0")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1411547503]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.711146, 0)
+billboard = 1
+fixed_size = true
+text = "1"
+font_size = 24
+outline_size = 8

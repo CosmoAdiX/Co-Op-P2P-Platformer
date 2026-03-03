@@ -50,7 +50,9 @@ func _process(_delta: float) -> void:
 	elif Input.is_action_just_pressed('menu') and menu.visible == true:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		menu.hide()
-	
+		
+	if Input.is_action_just_pressed('shoot'):
+		shoot()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -73,3 +75,12 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+func shoot():
+	var facing_dir = -head_1.transform.basis.z
+	var force = 100
+	var pos = global_position
+	
+	Global.shoot_ball.rpc_id(1, pos, facing_dir, force)
+	
+	
