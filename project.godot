@@ -29,7 +29,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/tile-run-instances/plugin.cfg")
+enabled=PackedStringArray("res://addons/tile-run-instances/plugin.cfg", "res://addons/tube/plugin.cfg")
 
 [file_customization]
 

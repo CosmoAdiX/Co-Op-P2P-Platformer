@@ -3,10 +3,27 @@ extends Node
 #IMPORTS
 const PLAYER = preload('uid://djomyauthjdyl')
 
+# adding tube contexts and webrtc
+const TUBE_CONTEXT = preload("uid://bnv1hsc78kvcv")
+
+var tube_client := TubeClient.new()
+var tube_enabled = true
+
 var enet_peer :=ENetMultiplayerPeer.new()
 
 var PORT = 9999
 var IP_ADDRESS = '127.0.0.1'
+
+func _ready() -> void:
+	if tube_enabled:
+		tube_client.context = TUBE_CONTEXT
+		get_tree().root.add_child.call_deferred(tube_client)
+		
+func tube_create():
+	multiplayer.peer_connected.connect(add_player)
+	multiplayer.peer_disconnected.connect(remove_player)
+	tube_client.create_session()
+	add_player(1)
 
 
 # Basic snippet for basic setup of a server-client commuinication on a local network.
@@ -28,7 +45,7 @@ func on_connected_to_server():
 
 
 func add_player(peer_id: int):
-	if peer_id == 1:
+	if peer_id == 1 and multiplayer.multiplayer_peer is ENetMultiplayerPeer:
 		return
 	
 	var new_player = PLAYER.instantiate()
