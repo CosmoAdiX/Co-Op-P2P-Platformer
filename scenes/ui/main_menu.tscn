@@ -34,19 +34,37 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Centre/MarginContainer" unique_id=1697954622]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Centre/MarginContainer" unique_id=773480774]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/Centre/MarginContainer/VBoxContainer" unique_id=2068883596]
+[node name="ENet" type="VBoxContainer" parent="Control/Centre/MarginContainer/HBoxContainer" unique_id=1697954622]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Centre/MarginContainer/HBoxContainer/ENet" unique_id=2068883596]
 layout_mode = 2
 text = "Co-Op Platformer Bruh."
 
-[node name="ButtonJoin" type="Button" parent="Control/Centre/MarginContainer/VBoxContainer" unique_id=496729925]
+[node name="ButtonJoin" type="Button" parent="Control/Centre/MarginContainer/HBoxContainer/ENet" unique_id=496729925]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Join"
 
-[node name="ButtonQuit" type="Button" parent="Control/Centre/MarginContainer/VBoxContainer" unique_id=495565329]
+[node name="ButtonQuit" type="Button" parent="Control/Centre/MarginContainer/HBoxContainer/ENet" unique_id=495565329]
 unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
+
+[node name="TubeMenu" type="VBoxContainer" parent="Control/Centre/MarginContainer/HBoxContainer" unique_id=1983216084]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Centre/MarginContainer/HBoxContainer/TubeMenu" unique_id=1748457926]
+layout_mode = 2
+text = "Co-Op Platformer Bruh."
+
+[node name="ButtonJoin" type="Button" parent="Control/Centre/MarginContainer/HBoxContainer/TubeMenu" unique_id=491755349]
+layout_mode = 2
+text = "Join"
+
+[node name="ButtonQuit" type="Button" parent="Control/Centre/MarginContainer/HBoxContainer/TubeMenu" unique_id=494529972]
 layout_mode = 2
 text = "Quit"
