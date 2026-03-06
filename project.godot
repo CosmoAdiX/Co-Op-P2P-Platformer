@@ -35,6 +35,7 @@ enabled=PackedStringArray("res://addons/tile-run-instances/plugin.cfg", "res://a
 
 folder_colors={
 "res://assets/": "green",
+"res://fonts/": "blue",
 "res://scenes/": "red",
 "res://scripts/": "yellow"
 }
