@@ -25,6 +25,11 @@ func tube_create():
 	tube_client.create_session()
 	add_player(1)
 
+func tube_join(session_id: String):
+	multiplayer.peer_connected.connect(add_player)
+	multiplayer.peer_disconnected.connect(remove_player)
+	multiplayer.connected_to_server.connect(on_connected_to_server)
+	tube_client.join_session(session_id)
 
 # Basic snippet for basic setup of a server-client commuinication on a local network.
 func start_server():
@@ -67,6 +72,9 @@ func remove_player(peer_id: int):
 		players[players_to_remove].queue_free()
 	
 func leave_server():
+	if tube_enabled:
+		tube_client.leave_session()
+	
 	multiplayer.multiplayer_peer.close()
 	multiplayer.multiplayer_peer = null
 	clean_up_signals()
@@ -78,3 +86,7 @@ func clean_up_signals():
 	multiplayer.peer_connected.disconnect(add_player)
 	multiplayer.peer_disconnected.disconnect(remove_player)
 	multiplayer.connected_to_server.disconnect(on_connected_to_server)
+
+func _exit_tree() -> void:
+	if tube_enabled:
+		tube_client.leave_session()
