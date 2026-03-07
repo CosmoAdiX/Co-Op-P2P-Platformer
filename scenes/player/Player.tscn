@@ -87,7 +87,14 @@ theme_override_constants/margin_top = 150
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 150
 
-[node name="LeaveButton" type="Button" parent="CanvasLayer/Menu/PanelContainer/MarginContainer" unique_id=293649373]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Menu/PanelContainer/MarginContainer" unique_id=1852349981]
+layout_mode = 2
+
+[node name="LabelSession" type="Label" parent="CanvasLayer/Menu/PanelContainer/MarginContainer/VBoxContainer" unique_id=214775234]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="LeaveButton" type="Button" parent="CanvasLayer/Menu/PanelContainer/MarginContainer/VBoxContainer" unique_id=293649373]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Leave Game"

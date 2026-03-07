@@ -13,6 +13,7 @@ const JUMP_VELOCITY = 10.5
 # Player menu UI
 @onready var menu: Control = %Menu
 @onready var leave_button: Button = %LeaveButton
+@onready var label_session: Label = %LabelSession
 
 
 @export var sensitivity: float = 0.002
@@ -30,6 +31,7 @@ func _ready():
 		set_physics_process(false)
 		return
 		
+	label_session.text = Network.tube_client.session_id
 	camera3d_1.current = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	leave_button.pressed.connect(func(): Network.leave_server())
