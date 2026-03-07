@@ -96,11 +96,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func shoot():
-	var facing_dir = -head_1.transform.basis.z
+	
 	var force = 50
 	var pos = global_position
+	var shoot_dir = get_shoot_direction()
 	
-	Global.shoot_ball.rpc_id(1, pos, facing_dir, force)
+	Global.shoot_ball.rpc_id(1, pos, shoot_dir, force)
 	
 func get_shoot_direction():
 	var viewport_rect = get_viewport().get_visible_rect().size

@@ -21,7 +21,7 @@ properties/1/spawn = true
 properties/1/replication_mode = 1
 
 [node name="Player" type="CharacterBody3D" unique_id=175516912]
-collision_layer = 9
+collision_layer = 8
 script = ExtResource("1_wr5hl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1375533557]
@@ -53,8 +53,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.279153, 0)
 billboard = 1
 fixed_size = true
 text = "Peer ID"
-font_size = 12
-outline_size = 6
+outline_size = 10
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1247064234]
 
