@@ -26,6 +26,12 @@ height = 5.0
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_b5dff"]
 height = 5.0
 
+[sub_resource type="BoxMesh" id="BoxMesh_3pli8"]
+size = Vector3(0.3, 20, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1o1l2"]
+size = Vector3(0.3, 20, 50)
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b5dff"]
 
 [sub_resource type="Sky" id="Sky_3pli8"]
@@ -75,6 +81,28 @@ mesh = SubResource("CylinderMesh_0waaa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tree3" unique_id=1728722176]
 shape = SubResource("CylinderShape3D_b5dff")
+
+[node name="Wall" type="StaticBody3D" parent="." unique_id=237937190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall" unique_id=2147268261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+mesh = SubResource("BoxMesh_3pli8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall" unique_id=331955013]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+shape = SubResource("BoxShape3D_1o1l2")
+
+[node name="Wall2" type="StaticBody3D" parent="." unique_id=1660214091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall2" unique_id=435989204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+mesh = SubResource("BoxMesh_3pli8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2" unique_id=1554464950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+shape = SubResource("BoxShape3D_1o1l2")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1860180262]
 transform = Transform3D(0.7814987, 0, 0.6239069, 0, 1, 0, -0.6239069, 0, 0.7814987, 4.9186144, 3.861356, 10.727324)

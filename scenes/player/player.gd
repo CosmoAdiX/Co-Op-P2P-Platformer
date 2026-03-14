@@ -34,6 +34,8 @@ func _ready():
 		set_physics_process(false)
 		return
 		
+	if Global.username: nameplate_1.text = Global.username
+	
 	label_session.text = Network.tube_client.session_id
 	camera3d_1.current = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
