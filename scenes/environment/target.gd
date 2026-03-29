@@ -31,7 +31,7 @@ func take_damage(damage: int, source: int):
 		
 
 
-var SPEED := 1.8
+var SPEED := 4.5
 var direction := Vector3.ZERO
 var goal_position := Vector3.ZERO
 
@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 		
 	if position.distance_to(goal_position) > 3.0:
 		direction = position.direction_to(goal_position)
-		animation_player_dummy.play("Walk_Formal")
+		animation_player_dummy.play("Sprint")
 	else:
 		direction = Vector3.ZERO
 		animation_player_dummy.play("Spell_Simple_Shoot")
