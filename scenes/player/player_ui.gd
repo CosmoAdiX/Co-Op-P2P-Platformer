@@ -6,6 +6,14 @@ extends CanvasLayer
 @onready var button_copy_session: Button = %ButtonCopySession
 @onready var hit_marker: Label = %HitMarker
 
+var COLORS: Array[Color] = [
+	Color.MAGENTA,
+	Color.GREEN,
+	Color.GREEN_YELLOW,
+	Color.HOT_PINK,
+	Color.CRIMSON,
+	Color.DODGER_BLUE
+]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
