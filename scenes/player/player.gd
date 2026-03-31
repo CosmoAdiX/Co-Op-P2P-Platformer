@@ -19,6 +19,7 @@ const JUMP_VELOCITY = 4.5
 
 @onready var player_avatar1: Node3D = %AnimationLibrary_Godot_Standard
 @export var animation_player: AnimationPlayer
+@export var player_mesh: MeshInstance3D
 
 var immobile := false
 
@@ -29,6 +30,11 @@ func _ready():
 	add_to_group("Players")
 	nameplate.text = name
 	animation_player.playback_default_blend_time = 0.25
+	
+	var material: StandardMaterial3D = player_mesh.get_active_material(0)
+	var new_material = material.duplicate()
+	new_material.albedo_color = Color.CYAN
+	player_mesh.set_surface_override_material(0, new_material)
 	
 	if not is_multiplayer_authority():
 		set_process(false)
