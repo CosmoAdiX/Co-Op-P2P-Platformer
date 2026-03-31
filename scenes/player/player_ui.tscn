@@ -66,6 +66,10 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Leave Game"
 
+[node name="OptionButtonColor" type="OptionButton" parent="Menu/PanelContainer/MarginContainer/VBoxContainer" unique_id=751959517]
+unique_name_in_owner = true
+layout_mode = 2
+
 [node name="Reticle" type="Panel" parent="." unique_id=1031553718]
 custom_minimum_size = Vector2(5, 5)
 anchors_preset = 8

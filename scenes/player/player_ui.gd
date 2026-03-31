@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var label_session: Label = %LabelSession
 @onready var button_copy_session: Button = %ButtonCopySession
 @onready var hit_marker: Label = %HitMarker
+@onready var option_button_color: OptionButton = %OptionButtonColor
 
 var COLORS: Array[Color] = [
 	Color.MAGENTA,
@@ -33,4 +34,9 @@ func _ready() -> void:
 	label_session.text = Network.tube_client.session_id
 	
 	for single_color in COLORS:
-		pass
+		var new_texture1 = GradientTexture2D.new()
+		var gradient = Gradient.new()
+		new_texture1.gradient = gradient
+		gradient.add_point(0, single_color)
+		gradient.remove_point(1)		
+		option_button_color.add_icon_item(new_texture1, "")
