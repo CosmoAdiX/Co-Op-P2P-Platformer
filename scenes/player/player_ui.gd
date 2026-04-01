@@ -20,7 +20,7 @@ var COLORS: Array[Color] = [
 	Color.AQUAMARINE
 ]
 
-# Called when the node enters the scene tree for the first time.
+# Called when the node enters the scene tree for the first time. Ok
 func _ready() -> void:
 	menu.hide()
 	hit_marker.hide()
