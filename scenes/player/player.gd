@@ -44,7 +44,7 @@ func _ready():
 	ready_client_visuals()
 
 func ready_client_visuals():
-	player_ui.option_button_color.item_selected(on_color_changed)
+	player_ui.option_button_color.item_selected(on_color_changed
 	player_avatar1.hide()
 	if Global.username: 
 		nameplate.text = Global.username
