@@ -137,10 +137,10 @@ func register_hit(is_dead = false):
 	player_ui.hit_marker.hide()
 
 func on_color_changed(new_item: int):
-	replicate_color_changed()
-	print("===================================== COLOR SELECTED BRUH!!! =====================================", str(player_ui.COLORS[new_item]))
+	replicate_color_changed.rpc(player_ui.COLORS[new_item])
 	
-func replicate_color_changed():
+@rpc("authority", "call_local")
+func replicate_color_changed(new_color: Color):
 	var material: StandardMaterial3D = player_mesh.get_active_material(0)
 	var new_material = material.duplicate()
 	new_material.albedo_color = Color.CYAN
