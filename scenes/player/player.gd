@@ -44,7 +44,7 @@ func _ready():
 	ready_client_visuals()
 
 func ready_client_visuals():
-	player_ui.option_button_color.item_selected(on_color_changed
+	player_ui.option_button_color.item_selected(on_color_changed)
 	player_avatar1.hide()
 	if Global.username: 
 		nameplate.text = Global.username
@@ -140,5 +140,5 @@ func register_hit(is_dead = false):
 	await get_tree().create_timer(0.2).timeout
 	player_ui.hit_marker.hide()
 
-func on_color_changed():
-	pass
+func on_color_changed(new_item: int):
+	player_ui.COLORS[new_item]
