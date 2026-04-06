@@ -7,6 +7,26 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_qkl4s"]
 size = Vector3(0.5, 2.314392, 0.09)
 
+[sub_resource type="Animation" id="Animation_qkl4s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.17056552, 1.0008321, -0.7537782)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qxlk6"]
+_data = {
+&"RESET": SubResource("Animation_qkl4s")
+}
+
 [node name="ArmsRoot" type="Node3D" unique_id=90471785]
 
 [node name="RightArm" type="Node3D" parent="." unique_id=1294248183]
@@ -55,18 +75,18 @@ settings/0/end_bone/direction = 6
 settings/0/end_bone/length = 0.085
 
 [node name="PoleLeft" type="Marker3D" parent="LeftArm/arm_model/Armature" parent_id_path=PackedInt32Array(1780299455, 1235633718) index="1" unique_id=1003225495]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6870057, -2.1578913, -2.0022478)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.68700576, -1.2145249, -2.0022478)
 
 [node name="Weapon" type="Node3D" parent="." unique_id=1644686935]
-transform = Transform3D(0.9931258, 0.11705205, 0, -0.11705205, 0.9931258, 0, 0, 0, 1, 0.33617833, -0.52601266, -1.1528939)
+transform = Transform3D(0.29562274, 0.47349754, 0.82970303, -0.674467, 0.71852815, -0.16973966, -0.6765363, -0.50942844, 0.53177166, 0.33617833, -0.52601266, -1.1528939)
 
 [node name="Root Scene" parent="Weapon" unique_id=584586117 instance=ExtResource("2_eeivl")]
 
 [node name="TargetRight" type="Marker3D" parent="Weapon" unique_id=465094516]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015518963, -0.065832764, 0.0022268295)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0071754754, -0.006337136, 0.0040756464)
 
 [node name="TargetLeft" type="Marker3D" parent="Weapon" unique_id=2086354834]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0070506036, 0.11829126, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013991922, -0.17263165, 0)
 
 [node name="Area3D" type="Area3D" parent="Weapon" unique_id=996428394]
 
@@ -75,6 +95,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7772522, 0)
 shape = SubResource("BoxShape3D_qkl4s")
 
 [node name="WeaponAnimationPlayer" type="AnimationPlayer" parent="." unique_id=1232260874]
+libraries/ = SubResource("AnimationLibrary_qxlk6")
 libraries/arm_model_animations = ExtResource("3_qkl4s")
 
 [editable path="RightArm/arm_model"]
