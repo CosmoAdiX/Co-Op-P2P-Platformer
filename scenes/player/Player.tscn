@@ -50,9 +50,6 @@ unique_name_in_owner = true
 [node name="Weapon" parent="Head/Camera3D/ArmsRoot" index="2" unique_id=1644686935]
 transform = Transform3D(0.2956227, 0.47349748, 0.829703, -0.67446697, 0.7185281, -0.16973965, -0.67653626, -0.5094284, 0.5317716, 0.33617833, -0.52601266, -1.1528939)
 
-[node name="WeaponAnimationPlayer" parent="Head/Camera3D/ArmsRoot" index="3" unique_id=1232260874]
-autoplay = &"arm_model_animations/idle"
-
 [node name="AnimationLibrary_Godot_Standard" parent="Head" unique_id=1376962049 instance=ExtResource("5_tpg5x")]
 unique_name_in_owner = true
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

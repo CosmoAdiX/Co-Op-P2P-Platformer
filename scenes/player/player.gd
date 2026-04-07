@@ -76,10 +76,10 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed('shoot'):
 		shoot()
 		
-	if Input.is_action_just_pressed('attack1'):
+	if Input.is_action_just_pressed("attack1"):
 		attack(1)
 	
-	if Input.is_action_just_pressed('attack2'):
+	if Input.is_action_just_pressed("attack2"):
 		attack(2)
 
 func open_menu(current_visibility: bool):
@@ -166,6 +166,8 @@ func attack(version: int):
 	if weapon_animation.current_animation.begins_with("arm_model_animations/swing"):
 		return
 	
+	animation_player.stop()
+	animation_player.play("Sword_Attack")
 	weapon_animation.play("arm_model_animations/swing_0" + str(version))
 	await weapon_animation.animation_finished
 	weapon_animation.play("arm_model_animations/idle")
