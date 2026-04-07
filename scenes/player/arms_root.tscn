@@ -88,9 +88,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0071754754, -0.006337136, 0
 [node name="TargetLeft" type="Marker3D" parent="Weapon" unique_id=2086354834]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013991922, -0.17263165, 0)
 
-[node name="Area3D" type="Area3D" parent="Weapon" unique_id=996428394]
+[node name="HurtBox" type="Area3D" parent="Weapon" unique_id=996428394]
+monitoring = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Weapon/Area3D" unique_id=728766840]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Weapon/HurtBox" unique_id=728766840]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7772522, 0)
 shape = SubResource("BoxShape3D_qkl4s")
 

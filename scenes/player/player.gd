@@ -21,6 +21,11 @@ const JUMP_VELOCITY = 4.5
 @export var animation_player: AnimationPlayer
 @export var player_mesh: MeshInstance3D
 
+# Adding the arm with sword and animating it.
+@onready var arm_root1: Node3D = %ArmsRoot
+@export var weapon_animation: AnimationPlayer
+@export var hurt_box: Area3D
+
 var immobile := false
 
 func _enter_tree() -> void:
@@ -30,6 +35,7 @@ func _ready():
 	add_to_group("Players")
 	nameplate.text = name
 	animation_player.playback_default_blend_time = 0.25
+	arm_root1.hide()
 	
 	
 	if not is_multiplayer_authority():
@@ -40,6 +46,10 @@ func _ready():
 	ready_client_visuals()
 
 func ready_client_visuals():
+	arm_root1.show()
+	weapon_animation.playback_default_blend_time = 0.25
+	weapon_animation.speed_scale = 0.7
+	
 	player_ui.option_button_color.item_selected.connect(on_color_changed)
 	player_avatar1.hide()
 	if Global.username: 
@@ -64,7 +74,13 @@ func _process(_delta: float) -> void:
 		return
 
 	if Input.is_action_just_pressed('shoot'):
-		shoot()	
+		shoot()
+		
+	if Input.is_action_just_pressed('attack1'):
+		attack(1)
+	
+	if Input.is_action_just_pressed('attack2'):
+		attack(2)
 
 func open_menu(current_visibility: bool):
 	player_ui.menu.visible = !current_visibility
@@ -139,9 +155,21 @@ func register_hit(is_dead = false):
 func on_color_changed(new_item: int):
 	replicate_color_changed.rpc(player_ui.COLORS[new_item])
 	
-@rpc("authority", "call_local")
+@rpc("authority", "call_remote")
 func replicate_color_changed(new_color: Color):
 	var material: StandardMaterial3D = player_mesh.get_active_material(0)
 	var new_material = material.duplicate()
 	new_material.albedo_color = new_color
 	player_mesh.set_surface_override_material(0, new_material)
+	
+func attack(version: int):
+	if weapon_animation.current_animation.begins_with("arm_model_animations/swing"):
+		return
+	
+	weapon_animation.play("arm_model_animations/swing_0" + str(version))
+	await weapon_animation.animation_finished
+	weapon_animation.play("arm_model_animations/idle")
+	
+	
+	
+	
