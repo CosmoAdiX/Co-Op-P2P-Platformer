@@ -119,7 +119,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	handle_animation(direction)
 	
+var one_shots: Array[String] = ["Sword_Attack"]
+
 func handle_animation(direction: Vector3):
+	
+	if animation_player.current_animation in one_shots:
+		return
+	
 	if velocity.y == 0.0:
 		if direction.x != 0.0 or direction.y != 0.0:
 			animation_player.play("Jog_Fwd")
