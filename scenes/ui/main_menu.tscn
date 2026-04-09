@@ -65,7 +65,7 @@ layout_mode = 2
 [node name="LabelTitle" type="Label" parent="Control/Center/MarginContainer/HBoxContainer/TubeMenu" unique_id=455454260]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Androo Game"
+text = "Chudai Khana"
 
 [node name="LabelSessionid" type="Label" parent="Control/Center/MarginContainer/HBoxContainer/TubeMenu" unique_id=390504241]
 layout_mode = 2
