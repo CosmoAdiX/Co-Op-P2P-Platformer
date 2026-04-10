@@ -7,6 +7,14 @@ var spawn_container: Node3D
 
 var BALL = load("uid://c1yny3sauy8yu")
 
+var session_info: Dictionary = { }
+
+func _ready() :
+	Network.tube_client.session_created.connect(set_up_scoreboard)
+
+func set_up_scoreboard():
+	session_info[1]
+
 @rpc("any_peer", "call_local")
 func shoot_ball(pos, dir, force):
 	var new_ball: RigidBody3D = BALL.instantiate()
