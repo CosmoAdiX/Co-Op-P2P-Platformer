@@ -2,4 +2,4 @@
 
 ---
 
-Co-Op multiplayer using Tube client, with p2p connection
+Co-Op multiplayer using Tube client, with seamless p2p connection
